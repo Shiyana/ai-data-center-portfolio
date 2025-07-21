@@ -1,5 +1,5 @@
-
-final_index_html = """
+# Remove the unwanted line and keep the proper HTML with descriptions.
+clean_index_html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,7 +103,7 @@ final_index_html = """
     <section id="capex">
         <h2>1. CapEx (Capital Expenditure)</h2>
         <div class="description">
-            CapEx covers one-time investments to build the data center, such as construction, high-density GPU racks, cooling systems, and network infrastructure. These costs vary based on AI workload requirements and hardware density.
+            CapEx covers one-time investments to build the data center, such as construction, high-density GPU racks, cooling systems, and network infrastructure.
         </div>
         <table>
             <tr><th>Component</th><th>Estimated Cost</th></tr>
@@ -118,7 +118,7 @@ final_index_html = """
     <section id="opex">
         <h2>2. OpEx (Operational Costs)</h2>
         <div class="description">
-            OpEx includes recurring costs to operate the data center, such as power consumption, staff salaries, cooling system maintenance, hardware refresh cycles, and software licensing.
+            OpEx includes recurring costs like power, staff, cooling, hardware refresh cycles, and software licensing.
         </div>
         <table>
             <tr><th>Category</th><th>Range / Unit</th></tr>
@@ -134,7 +134,7 @@ final_index_html = """
     <section id="cloud">
         <h2>3. Cloud vs. On-Prem GPU Cost</h2>
         <div class="description">
-            Cloud services offer flexibility but are costlier at scale. On-premises solutions and shared community GPU models (like NCShare) reduce long-term costs for large workloads.
+            Cloud services offer flexibility but are costlier at scale. On-prem solutions and shared GPU models (like NCShare) are cheaper long-term for heavy workloads.
         </div>
         <table>
             <tr><th>Platform</th><th>Cost per GPU Hour (USD)</th></tr>
@@ -148,7 +148,7 @@ final_index_html = """
     <section id="institutions">
         <h2>4. Institutional AI Center Cost Examples</h2>
         <div class="description">
-            Universities and research centers have invested heavily in AI infrastructure, demonstrating various models of funding, sustainability, and performance optimization.
+            Examples of global AI data centers and investments that set benchmarks in performance and cost efficiency.
         </div>
         <table>
             <tr><th>Institution</th><th>Total Investment</th><th>Key Features</th></tr>
@@ -164,25 +164,24 @@ final_index_html = """
     <section id="recommendations">
         <h2>5. Recommendations</h2>
         <div class="description">
-            Strategies to optimize cost, improve performance, and ensure scalability of AI data center infrastructure.
+            Practical steps to optimize costs and maximize value in AI infrastructure.
         </div>
         <ul>
-            <li>Shared GPU infrastructure at MCNC can reduce costs by <strong>30–50%</strong> compared to cloud.</li>
-            <li>Use Slurm for scheduling and containerized workloads.</li>
-            <li>Implement a strong backup and redundancy strategy.</li>
-            <li>Leverage grants and vendor credits (AWS, NVIDIA, Dell) for initial funding.</li>
+            <li>Shared GPU infrastructure can reduce costs by <strong>30–50%</strong>.</li>
+            <li>Use Slurm for job scheduling and containerized workloads.</li>
+            <li>Leverage grants and vendor credits (AWS, NVIDIA, Dell) for startup costs.</li>
         </ul>
     </section>
 
     <section id="risks">
         <h2>6. Risks & Sustainability Considerations</h2>
         <div class="description">
-            AI data centers face challenges related to high energy costs, vendor lock-in, and hardware refresh cycles.
+            Addressing potential risks and ensuring sustainable AI data center operations.
         </div>
         <ul>
-            <li><strong>Energy Costs:</strong> Mitigated with renewable energy credits, peak-shaving strategies, and dynamic cooling.</li>
-            <li><strong>Vendor Lock-In:</strong> Use container-based workloads and open orchestration to prevent dependency.</li>
-            <li><strong>Long-Term Viability:</strong> GPU reuse and power-optimized scheduling help extend infrastructure life.</li>
+            <li><strong>Energy Costs:</strong> Mitigated with renewable energy credits and efficient cooling.</li>
+            <li><strong>Vendor Lock-In:</strong> Use open orchestration and container standards.</li>
+            <li><strong>Long-Term Viability:</strong> GPU reuse and hybrid cloud strategies.</li>
         </ul>
     </section>
 
@@ -193,8 +192,8 @@ final_index_html = """
 </html>
 """
 
-final_index_path = "/mnt/data/index.html"
-with open(final_index_path, "w") as f:
-    f.write(final_index_html)
+clean_index_path = "/mnt/data/index.html"
+with open(clean_index_path, "w") as f:
+    f.write(clean_index_html)
 
-final_index_path
+clean_index_path
