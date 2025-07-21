@@ -1,7 +1,6 @@
-# Let's generate a colourful, presentation-like index.html with all sections and embedded images.
+# Let's create an enhanced HTML portfolio with detailed explanations, totals for each section, and navigation tabs.
 
-# HTML content with modern colorful design and sections
-index_html_content = """
+enhanced_index_html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,25 +12,36 @@ index_html_content = """
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f4f8;
+            background-color: #f4f6f8;
             color: #333;
         }
         header {
             background: linear-gradient(90deg, #4e73df, #1cc88a);
             color: white;
-            padding: 30px;
+            padding: 20px;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         section {
             padding: 20px 40px;
             margin: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
         h2 {
             color: #4e73df;
@@ -42,22 +52,29 @@ index_html_content = """
             margin-top: 15px;
         }
         table, th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
+            border: 1px solid #ddd;
+            padding: 8px;
         }
         th {
             background-color: #eaf2fd;
         }
         img {
-            max-width: 90%;
-            margin: 10px auto;
+            max-width: 85%;
+            margin: 15px auto;
             display: block;
             border: 2px solid #ddd;
             border-radius: 8px;
         }
-        ul {
-            list-style: disc;
-            margin-left: 20px;
+        .description {
+            background-color: #eef6f9;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .total {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #e74a3b;
         }
         footer {
             text-align: center;
@@ -66,31 +83,44 @@ index_html_content = """
             color: white;
             margin-top: 30px;
         }
-        .highlight {
-            color: #e74a3b;
-            font-weight: bold;
+        footer a {
+            color: white;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>AI Data Center Portfolio</h1>
-        <p>A detailed summary of costs, infrastructure, and strategies</p>
+        <nav>
+            <a href="#capex">CapEx</a> |
+            <a href="#opex">OpEx</a> |
+            <a href="#cloud">Cloud vs On-Prem</a> |
+            <a href="#institutions">Institutions</a> |
+            <a href="#recommendations">Recommendations</a> |
+            <a href="#risks">Risks</a>
+        </nav>
     </header>
 
-    <section>
-        <h2>1. CapEx (Capital Expenditure) Overview</h2>
+    <section id="capex">
+        <h2>1. CapEx (Capital Expenditure)</h2>
+        <div class="description">
+            Capital Expenditure (CapEx) includes all one-time costs required to build and set up the AI data center infrastructure.
+        </div>
         <table>
             <tr><th>Component</th><th>Estimated Cost</th></tr>
-            <tr><td>Basic Data Center Buildout (per MW)</td><td>8M - 15M</td></tr>
-            <tr><td>High-Density GPU Racks (per rack)</td><td>200K - 400K</td></tr>
+            <tr><td>Basic Data Center Buildout (per MW)</td><td>$8M - $15M</td></tr>
+            <tr><td>High-Density GPU Racks (per rack)</td><td>$200K - $400K</td></tr>
             <tr><td>Power & Cooling (Liquid/Direct)</td><td>30–40% of total CapEx</td></tr>
-            <tr><td>Network Infrastructure (Infiniband/10/100GbE)</td><td>1M – 3M</td></tr>
+            <tr><td>Network Infrastructure (Infiniband/10/100GbE)</td><td>$1M – $3M</td></tr>
         </table>
+        <p class="total">Estimated Total: $10M - $20M per MW (including all components)</p>
     </section>
 
-    <section>
+    <section id="opex">
         <h2>2. OpEx (Operational Costs)</h2>
+        <div class="description">
+            Operational Expenditure (OpEx) accounts for ongoing costs such as energy, staff, cooling, and software maintenance.
+        </div>
         <table>
             <tr><th>Category</th><th>Range / Unit</th></tr>
             <tr><td>Power</td><td>$0.10 – $0.15 per kWh</td></tr>
@@ -99,10 +129,14 @@ index_html_content = """
             <tr><td>Hardware Refresh</td><td>Every 3–5 years (~20% annualized)</td></tr>
             <tr><td>Support Software Licenses</td><td>Varies (open source or vendor support)</td></tr>
         </table>
+        <p class="total">Estimated Annual Total: $700K - $1.5M per site</p>
     </section>
 
-    <section>
+    <section id="cloud">
         <h2>3. Cloud vs. On-Prem GPU Cost</h2>
+        <div class="description">
+            Comparing costs of using cloud services (AWS, Azure, GCP) versus building a dedicated on-premises GPU infrastructure.
+        </div>
         <table>
             <tr><th>Platform</th><th>Cost per GPU Hour (USD)</th></tr>
             <tr><td>AWS / Azure / GCP</td><td>$2.00 – $5.00</td></tr>
@@ -112,8 +146,11 @@ index_html_content = """
         <img src="cloud_vs_onprem_cost.png" alt="Cloud vs On-Prem GPU Cost Graph">
     </section>
 
-    <section>
+    <section id="institutions">
         <h2>4. Institutional AI Center Cost Examples</h2>
+        <div class="description">
+            Real-world examples of AI data center investments from various universities and research institutions.
+        </div>
         <table>
             <tr><th>Institution</th><th>Total Investment</th><th>Key Features</th></tr>
             <tr><td>University of Florida – AI Supercomputing Center</td><td>$70M</td><td>HiPerGator AI supercomputer, $25M NVIDIA donation.</td></tr>
@@ -125,35 +162,41 @@ index_html_content = """
         <img src="institutional_investments.png" alt="Institutional AI Center Investments Graph">
     </section>
 
-    <section>
+    <section id="recommendations">
         <h2>5. Recommendations</h2>
+        <div class="description">
+            Strategic suggestions to optimize AI data center costs and performance.
+        </div>
         <ul>
-            <li>Shared GPU infrastructure at MCNC can reduce costs by <span class="highlight">30–50%</span> compared to cloud.</li>
+            <li>Shared GPU infrastructure at MCNC can reduce costs by <strong>30–50%</strong> compared to cloud.</li>
             <li>Use Slurm for scheduling and containerized workloads.</li>
             <li>Implement a strong backup and redundancy strategy.</li>
             <li>Leverage grants and vendor credits (AWS, NVIDIA, Dell) for initial funding.</li>
         </ul>
     </section>
 
-    <section>
+    <section id="risks">
         <h2>6. Risks & Sustainability Considerations</h2>
+        <div class="description">
+            Identifying potential risks and strategies for sustainable AI infrastructure management.
+        </div>
         <ul>
-            <li><span class="highlight">Energy Costs:</span> Mitigated with renewable energy credits, peak-shaving strategies, and dynamic cooling.</li>
-            <li><span class="highlight">Vendor Lock-In:</span> Use container-based workloads and open orchestration to prevent dependency.</li>
-            <li><span class="highlight">Long-Term Viability:</span> GPU reuse and power-optimized scheduling help extend infrastructure life.</li>
+            <li><strong>Energy Costs:</strong> Mitigated with renewable energy credits, peak-shaving strategies, and dynamic cooling.</li>
+            <li><strong>Vendor Lock-In:</strong> Use container-based workloads and open orchestration to prevent dependency.</li>
+            <li><strong>Long-Term Viability:</strong> GPU reuse and power-optimized scheduling help extend infrastructure life.</li>
         </ul>
     </section>
 
     <footer>
-        <p>&copy; 2025 AI Data Center Portfolio | <a style="color: white;" href="https://github.com/Shiyana/ai-data-center-portfolio">View Repository</a></p>
+        <p>&copy; 2025 AI Data Center Portfolio | <a href="https://github.com/Shiyana/ai-data-center-portfolio">View Repository</a></p>
     </footer>
 </body>
 </html>
 """
 
-# Save the index.html
-index_path = "/mnt/data/index.html"
-with open(index_path, "w") as f:
-    f.write(index_html_content)
+# Save enhanced index.html
+enhanced_index_path = "/mnt/data/index.html"
+with open(enhanced_index_path, "w") as f:
+    f.write(enhanced_index_html)
 
-index_path
+enhanced_index_path
