@@ -1,6 +1,5 @@
-# Let's create an enhanced HTML portfolio with detailed explanations, totals for each section, and navigation tabs.
 
-enhanced_index_html = """
+final_index_html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +103,7 @@ enhanced_index_html = """
     <section id="capex">
         <h2>1. CapEx (Capital Expenditure)</h2>
         <div class="description">
-            Capital Expenditure (CapEx) includes all one-time costs required to build and set up the AI data center infrastructure.
+            CapEx covers one-time investments to build the data center, such as construction, high-density GPU racks, cooling systems, and network infrastructure. These costs vary based on AI workload requirements and hardware density.
         </div>
         <table>
             <tr><th>Component</th><th>Estimated Cost</th></tr>
@@ -113,13 +112,13 @@ enhanced_index_html = """
             <tr><td>Power & Cooling (Liquid/Direct)</td><td>30–40% of total CapEx</td></tr>
             <tr><td>Network Infrastructure (Infiniband/10/100GbE)</td><td>$1M – $3M</td></tr>
         </table>
-        <p class="total">Estimated Total: $10M - $20M per MW (including all components)</p>
+        <p class="total">Estimated Total: $10M - $20M per MW</p>
     </section>
 
     <section id="opex">
         <h2>2. OpEx (Operational Costs)</h2>
         <div class="description">
-            Operational Expenditure (OpEx) accounts for ongoing costs such as energy, staff, cooling, and software maintenance.
+            OpEx includes recurring costs to operate the data center, such as power consumption, staff salaries, cooling system maintenance, hardware refresh cycles, and software licensing.
         </div>
         <table>
             <tr><th>Category</th><th>Range / Unit</th></tr>
@@ -135,7 +134,7 @@ enhanced_index_html = """
     <section id="cloud">
         <h2>3. Cloud vs. On-Prem GPU Cost</h2>
         <div class="description">
-            Comparing costs of using cloud services (AWS, Azure, GCP) versus building a dedicated on-premises GPU infrastructure.
+            Cloud services offer flexibility but are costlier at scale. On-premises solutions and shared community GPU models (like NCShare) reduce long-term costs for large workloads.
         </div>
         <table>
             <tr><th>Platform</th><th>Cost per GPU Hour (USD)</th></tr>
@@ -149,7 +148,7 @@ enhanced_index_html = """
     <section id="institutions">
         <h2>4. Institutional AI Center Cost Examples</h2>
         <div class="description">
-            Real-world examples of AI data center investments from various universities and research institutions.
+            Universities and research centers have invested heavily in AI infrastructure, demonstrating various models of funding, sustainability, and performance optimization.
         </div>
         <table>
             <tr><th>Institution</th><th>Total Investment</th><th>Key Features</th></tr>
@@ -165,7 +164,7 @@ enhanced_index_html = """
     <section id="recommendations">
         <h2>5. Recommendations</h2>
         <div class="description">
-            Strategic suggestions to optimize AI data center costs and performance.
+            Strategies to optimize cost, improve performance, and ensure scalability of AI data center infrastructure.
         </div>
         <ul>
             <li>Shared GPU infrastructure at MCNC can reduce costs by <strong>30–50%</strong> compared to cloud.</li>
@@ -178,7 +177,7 @@ enhanced_index_html = """
     <section id="risks">
         <h2>6. Risks & Sustainability Considerations</h2>
         <div class="description">
-            Identifying potential risks and strategies for sustainable AI infrastructure management.
+            AI data centers face challenges related to high energy costs, vendor lock-in, and hardware refresh cycles.
         </div>
         <ul>
             <li><strong>Energy Costs:</strong> Mitigated with renewable energy credits, peak-shaving strategies, and dynamic cooling.</li>
@@ -194,9 +193,8 @@ enhanced_index_html = """
 </html>
 """
 
-# Save enhanced index.html
-enhanced_index_path = "/mnt/data/index.html"
-with open(enhanced_index_path, "w") as f:
-    f.write(enhanced_index_html)
+final_index_path = "/mnt/data/index.html"
+with open(final_index_path, "w") as f:
+    f.write(final_index_html)
 
-enhanced_index_path
+final_index_path
