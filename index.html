@@ -1,5 +1,3 @@
-# Remove the unwanted line and keep the proper HTML with descriptions.
-clean_index_html = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,13 +120,13 @@ clean_index_html = """
         </div>
         <table>
             <tr><th>Category</th><th>Range / Unit</th></tr>
-            <tr><td>Power</td><td>$0.10 – $0.15 per kWh</td></tr>
+            <tr><td>Power (1MW facility)</td><td>$876,000 – $1,314,000 annually</td></tr>
             <tr><td>Staffing & Ops</td><td>$500K – $1M annually per site</td></tr>
             <tr><td>Cooling Maintenance</td><td>$100K – $300K annually</td></tr>
             <tr><td>Hardware Refresh</td><td>Every 3–5 years (~20% annualized)</td></tr>
             <tr><td>Support Software Licenses</td><td>Varies (open source or vendor support)</td></tr>
         </table>
-        <p class="total">Estimated Annual Total: $700K - $1.5M per site</p>
+        <p class="total">Estimated Annual Total: $1.5M - $2.8M (for 1MW)</p>
     </section>
 
     <section id="cloud">
@@ -151,12 +149,12 @@ clean_index_html = """
             Examples of global AI data centers and investments that set benchmarks in performance and cost efficiency.
         </div>
         <table>
-            <tr><th>Institution</th><th>Total Investment</th><th>Key Features</th></tr>
-            <tr><td>University of Florida – AI Supercomputing Center</td><td>$70M</td><td>HiPerGator AI supercomputer, $25M NVIDIA donation.</td></tr>
-            <tr><td>MIT Schwarzman College of Computing</td><td>$1B</td><td>Interdisciplinary AI research and policy focus.</td></tr>
-            <tr><td>San Diego Supercomputer Center (SDSC)</td><td>$11.5M</td><td>NSF-funded AI/ML HPC system (Expanse).</td></tr>
-            <tr><td>MGHPCC (Massachusetts Green HPC Center)</td><td>$90M</td><td>Shared HPC facility powered by green energy.</td></tr>
-            <tr><td>University of Tennessee + Oak Ridge (Frontier)</td><td>$600M+</td><td>World's fastest supercomputer (as of 2022).</td></tr>
+            <tr><th>Institution</th><th>Total Investment</th><th>Key Features</th><th>Size (GPUs / MW)</th></tr>
+            <tr><td>University of Florida – AI Supercomputing Center</td><td>$70M</td><td>HiPerGator AI supercomputer, $25M NVIDIA donation.</td><td>700+ GPUs, ~1 MW</td></tr>
+            <tr><td>MIT Schwarzman College of Computing</td><td>$1B</td><td>Interdisciplinary AI research and policy focus.</td><td>~5 MW, 5000+ GPUs</td></tr>
+            <tr><td>San Diego Supercomputer Center (SDSC)</td><td>$11.5M</td><td>NSF-funded AI/ML HPC system (Expanse).</td><td>~700 GPUs, ~0.8 MW</td></tr>
+            <tr><td>MGHPCC (Massachusetts Green HPC Center)</td><td>$90M</td><td>Shared HPC facility powered by green energy.</td><td>~2 MW capacity</td></tr>
+            <tr><td>University of Tennessee + Oak Ridge (Frontier)</td><td>$600M+</td><td>World's fastest supercomputer (as of 2022).</td><td>9,000+ GPUs, ~29 MW</td></tr>
         </table>
         <img src="institutional_investments.png" alt="Institutional AI Center Investments Graph">
     </section>
@@ -190,10 +188,3 @@ clean_index_html = """
     </footer>
 </body>
 </html>
-"""
-
-clean_index_path = "/mnt/data/index.html"
-with open(clean_index_path, "w") as f:
-    f.write(clean_index_html)
-
-clean_index_path
